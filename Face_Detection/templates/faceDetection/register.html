@@ -1,0 +1,23 @@
+{% extends '../base.html' %}
+{% block title %}
+  Register
+{% endblock title %}
+
+{% block content %}
+  
+<h1>Register Page</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <h3>Register form</h3><br>
+{#    <input type="text" placeholder="Full name"><br>#}
+{#    <input type="number" name="face_id" placeholder="Number"><br>#}
+{#    <input type="text" name="email" id="" placeholder="Email"> <br>#}
+{#    <input type="text" name="phone" placeholder="Phone"><br>#}
+{#    <input type="file" name="dp" accept="image/*" id=""><br>#}
+{#    <input type="submit" value="Register"><br>#}
+{#    <input type="reset" value="Clear">#}
+    {{ form.as_p }}
+    <input type="submit" value="Register"><br>
+    <input type="reset" value="Clear">
+</form>
+{% endblock content %}
