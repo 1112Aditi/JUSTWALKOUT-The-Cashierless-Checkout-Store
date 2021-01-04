@@ -29,13 +29,14 @@
       </div>
       <div class="card-body">
         {% if user.image %}
-        <img src="{{ user.image.url }}" class="card-img-top" height="280" width="300" alt="...">
+        <img src="{{ user.image.url }}" class="card-img-top rounded border" height="280" width="300" alt="...">
         {% else %}
-        <img src="/static/images/dp.jpeg" class="card-img-top" height="280" width="300" alt="...">
+        <img src="/static/images/dp.jpeg" class="card-img-top rounded border" height="280" width="300" alt="...">
         {% endif %}
         <ul class="list-group my-1">
-          <li class="list-group-item list-group-item-action active">{{ user.email }}</li>
-          <li class="list-group-item list-group-item-action">{{ user.phone }}</li>
+          <li class="list-group-item list-group-item-action active">current a/c - {{ user.balance }} ₹</li>
+          <li class="list-group-item list-group-item-action">phone - {{ user.phone }}</li>
+          <li class="list-group-item list-group-item-action">email - {{ user.email }}</li>
         
         </ul>
         

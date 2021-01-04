@@ -1,4 +1,5 @@
 {% extends '../base.html' %}
+{% load crispy_forms_tags %}
 {% block title %}
   Register
 {% endblock title %}
@@ -6,7 +7,7 @@
   
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="{% url 'home' %}">
       <img src="/static/assets/nav.png" alt="" width="30" height="30" class="d-inline-block align-top">
       JustWalkOut
     </a>
@@ -34,22 +35,26 @@
   </div>
   <div class="col">
     
-    <div class="card my-2" style="width: 35rem;">
+    <div class="card my-4" style="width: 35rem;">
+      <div class="card-header list-group-item active" aria-current="true">
+        Registration
+      </div>
       <div class="card-body" >
       
 <form action="" method="post" enctype="multipart/form-data" >
   {% csrf_token %}
-  <h3>Register form</h3><br>
 {#    <input type="text" placeholder="Full name"><br>#}
 {#    <input type="number" name="face_id" placeholder="Number"><br>#}
 {#    <input type="text" name="email" id="" placeholder="Email"> <br>#}
-{#    <input type="text" name="phone" placeholder="Phone"><br>#}
-{#    <input type="file" name="dp" accept="image/*" id=""><br>#}
+{#    <input type="text" name="phone" placeholder="Phone"> #}
+{#    <input type="file" name="dp" accept="images/*" id=""><br>#}
 {#    <input type="submit" value="Register"><br>#}
 {#    <input type="reset" value="Clear">#}
-  {{ form.as_p }}
-  <input type="submit" class="btn btn-success"value="Register"><br><br>
+  {{ form|crispy }}
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <input type="submit" class="btn btn-success "value="Register"><br>
   <input type="reset" class="btn btn-danger" value="Clear">
+</div>
 </form>
       </div>
     </div>

@@ -129,7 +129,7 @@ class FaceRecognition:
 
                 # Check if confidence is less then 100 ==> "0" is perfect match 
                 if (confidence < 100):
-                    name = 'Detected'
+                    name = 'Detecting...'
                 else:
                     name = "Unknown"
                 

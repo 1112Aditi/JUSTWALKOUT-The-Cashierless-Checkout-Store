@@ -9,5 +9,5 @@ class ResgistrationForm(forms.ModelForm):
             'name',
             'email',
             'phone',
-            'image'
+            'image',
         ]
