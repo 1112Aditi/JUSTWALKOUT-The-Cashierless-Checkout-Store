@@ -1,0 +1,111 @@
+{% extends '../base.html' %}
+{% block title %}
+  Dashboard
+{% endblock title %}
+
+{% block nav %}
+  
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">justWalkOut</a>
+  </div>
+</nav>
+<!-- end navbar -->
+{% endblock nav %}
+{% block content %}
+
+
+<div class="row">
+  <!-- profile section -->
+  <div class="col-4">
+    <div class="card text-center my-2"  style="width: 20rem;">
+      <div class="card-header list-group-item list-group-item-action active">
+        {{ user.name }}
+      </div>
+      <div class="card-body">
+        {% if user.image %}
+        <img src="{{ user.image.url }}" class="card-img-top" alt="...">
+        {% else %}
+        <img src="/static/images/dp.jpeg" class="card-img-top" alt="...">
+        {% endif %}
+        <ul class="list-group ">
+          <li class="list-group-item list-group-item-action active">{{ user.email }}</li>
+          <li class="list-group-item list-group-item-action">{{ user.phone }}</li>
+        
+        </ul>
+        
+      </div>
+    </div>
+    </div>
+  <!-- end profile section -->
+
+    <!-- product table section -->
+    <div class="col-8 my-2">
+
+      <!-- alert of are you in store or not? -->
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>{{user.name}}, </strong> you are outside the store. 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+         <b> Previous Shopping cart</b>
+          <a href="#" class="btn btn-primary" style="float: right;">+ Add Money</a>
+        </div>
+        <div class="card-body">
+
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Photo</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td><img src="/static/productImage/coco.jpg" class="rounded mx-auto d-block" alt="..." width="50" height="50"></td>
+                <td>Coca-Cola Can (200 ml)</td>
+                <td>1</td>
+                <td>₹25</td>
+              </tr>
+
+              <tr>
+                <th scope="row">2</th>
+                <td><img src="/static/productImage/maggie.jpg" class="rounded mx-auto d-block" alt="..." width="50" height="50"></td>
+                <td>Maggi noodles(12%/ 100 g)</td>
+                <td>3</td>
+                <td>₹12</td>
+              </tr>
+              
+              <tr>
+                <th scope="row">3</th>
+                <td><img src="/static/productImage/kurkure.jpg" class="rounded mx-auto d-block" alt="..." width="50" height="50"></td>
+                <td>Kurkure Snacks - Masala Munch, 90g Pouch</td>
+                <td>2</td>
+                <td>₹10</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer">
+          <b>
+          <a style="float: right;">Total = 44 ₹</a>
+        </b>
+      </div>
+        </div>
+      </div>
+
+
+    <!-- end product table section -->
+</div>
+
+
+
+{% endblock content %}

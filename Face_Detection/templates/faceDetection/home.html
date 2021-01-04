@@ -4,7 +4,52 @@
 {% endblock title %}
 
 {% block content %}
-<p>if you are not registered <a href="{% url 'register' %}">Register</a></p> <br>
-<p>Login <a href="{% url 'login' %}">login</a></p> <br>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'home' %}">JustWalkOut</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'register' %}">Register</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="row my-1">
+  <div class="col">
+ 
+    <div class="card">
+      <div class="card-body">
+    <p>if you are not registered </p> <br>
+    <a href="{% url 'register' %}"><button type="button" class="btn btn-primary">Register</button></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+
+    <div class="card">
+      <div class="card-body">
+        <p> Login here </p><br>
+        <a href="{% url 'login' %}"><button type="button" class="btn btn-primary">Login</button></a>
+    
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+</div>
   
 {% endblock content %}

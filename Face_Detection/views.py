@@ -30,7 +30,7 @@ def addFace(face_id):
     face_id = face_id
     faceRecognition.faceDetect(face_id)
     faceRecognition.trainFace()
-    return redirect('/')
+    return redirect('login')
 
 def login(request):
     face_id = faceRecognition.recognizeFace()
@@ -44,5 +44,5 @@ def dashboard(request,face_id):
     data ={
         'user' : UserProfile.objects.get(face_id = face_id)
     }
-    return render(request,'faceDetection/dashboard.html',context=data)
+    return render(request,'faceDetection/profile.html',context=data)
 

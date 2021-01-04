@@ -8,15 +8,25 @@
 <meta name="Description" content="Enter your description here"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
 <title>{% block title %}
   
 {% endblock title %} | justWalkOut</title>
 </head>
 <body>
+  {% block nav %}
+    
+  {% endblock nav %}
+
+    <div class="container-fluid">
+        
 {% block content %}
   
 {% endblock content %}
+
+<p class="text-muted" style="float: right;">
+    Build By <b>JustWalkOut Team</b>
+  </p>   
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.min.js"></script>
 </body>

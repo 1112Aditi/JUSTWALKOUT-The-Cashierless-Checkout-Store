@@ -2,13 +2,41 @@
 {% block title %}
   Register
 {% endblock title %}
-
-{% block content %}
+{% block nav %}
   
-<h1>Register Page</h1>
-<form action="" method="post">
-    {% csrf_token %}
-    <h3>Register form</h3><br>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'home' %}">JustWalkOut</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+{% endblock nav %}
+{% block content %}
+
+<div class="row">
+  <div class="col">
+    1 of 2
+  </div>
+  <div class="col">
+    
+    <div class="card my-2" style="width: 35rem;">
+      <div class="card-body" >
+      
+<form action="" method="post" enctype="multipart/form-data" >
+  {% csrf_token %}
+  <h3>Register form</h3><br>
 {#    <input type="text" placeholder="Full name"><br>#}
 {#    <input type="number" name="face_id" placeholder="Number"><br>#}
 {#    <input type="text" name="email" id="" placeholder="Email"> <br>#}
@@ -16,8 +44,14 @@
 {#    <input type="file" name="dp" accept="image/*" id=""><br>#}
 {#    <input type="submit" value="Register"><br>#}
 {#    <input type="reset" value="Clear">#}
-    {{ form.as_p }}
-    <input type="submit" value="Register"><br>
-    <input type="reset" value="Clear">
+  {{ form.as_p }}
+  <input type="submit" class="btn btn-success"value="Register"><br><br>
+  <input type="reset" class="btn btn-danger" value="Clear">
 </form>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
 {% endblock content %}
