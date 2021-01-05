@@ -64,6 +64,13 @@ def dashboard(request, face_id):
     except ObjectDoesNotExist:
         return redirect('userNotFound')
 
+def logout(request):
+    messageSend = "Successfully logout"
+    data = {
+                'messageLogout' : messageSend
+            }
+    return redirect('home', data)
+    # return render(request, 'faceDetection/home.html', context=data)
 
 
         
