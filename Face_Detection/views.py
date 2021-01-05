@@ -21,7 +21,13 @@ def register(request):
             print("IN HERE")
             messages.success(request, "SuccessFully registered")
             addFace(request.POST['face_id'])
-            redirect('/')
+            messageSend = "SuccessFully registered"
+            # msg = 1
+            data = {
+                'message' : messageSend
+            }
+            return render(request, 'faceDetection/home.html', context=data)
+
         else:
             messages.error(request, "Account registered failed")
     else:

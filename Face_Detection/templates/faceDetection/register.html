@@ -71,6 +71,20 @@
 {#    <input type="submit" value="Register"><br>#}
 {#    <input type="reset" value="Clear">#}
   {{ form|crispy }}
+ 
+  <br>
+  <p>
+    <a class="btn btn-outline-dark" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+      ₹ Default Balance 
+    </a>
+   
+  </p>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+     1000 ₹ Credit in a/c
+    </div>
+  </div>
+
   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
   <input type="submit" class="btn btn-success "value="Register"><br>
   <input type="reset" class="btn btn-danger" value="Clear">

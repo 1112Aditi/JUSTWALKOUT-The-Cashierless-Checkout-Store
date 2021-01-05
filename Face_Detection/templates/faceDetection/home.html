@@ -30,6 +30,18 @@
 {% block content %}
 
 
+{% if message %}
+
+  <div id="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Congratulations!</strong> You have successfully registered with justWalkOut
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+{% endif %}
+  
+  
+
+
 <div class="row my-1">
   <div class="col">
  
