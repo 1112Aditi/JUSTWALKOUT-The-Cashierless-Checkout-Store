@@ -37,14 +37,32 @@ class FaceRecognition:
             faces = detector.detectMultiScale(gray, 1.3, 5)
 
             for (x,y,w,h) in faces:
+                startX = x    
+                startY = y
+                endX = w+x
+                endY = h+y
+                
+                cv2.line(img, (startX, startY), (startX+20, startY), (142,42,27), thickness=2)
+                cv2.line(img, (startX, startY), (startX, startY+20), (142,42,27), thickness=2)
+                # ending right
+                cv2.line(img, (endX, endY), (endX, endY-20), (142,42,27), thickness=2)
+                cv2.line(img, (endX, endY), (endX-20, endY), (142,42,27), thickness=2)
 
-                cv2.rectangle(img, (x,y), (x+w,y+h), (255,0,0), 2)
+                # ending left
+                cv2.line(img,(startX+20, endY),(startX, endY), (142,42,27), thickness=2)
+                cv2.line(img,(startX, endY-20),(startX, endY), (142,42,27), thickness=2)
+                
+                # starting left
+                cv2.line(img,(endX, startY+20),(endX, startY), (142,42,27), thickness=2)
+                cv2.line(img,(endX-20, startY),(endX, startY), (142,42,27), thickness=2)
+                
+                # cv2.rectangle(img, (x,y), (x+w,y+h), (255,0,0), 2)
                 count += 1
-
+                
                 # Save the captured image into the datasets folder
                 cv2.imwrite(BASE_DIR+'/Face_Detection/dataset/User.' + str(face_id) + '.' + str(count) + ".jpg", gray[y:y+h,x:x+w])
 
-                cv2.imshow('Register Face', img)
+                # cv2.imshow('Register Face', img)
 
             k = cv2.waitKey(100) & 0xff # Press 'ESC' for exiting video
             if k == 27:
@@ -122,9 +140,25 @@ class FaceRecognition:
             )
 
             for(x,y,w,h) in faces:
+                startX = x    
+                startY = y
+                endX = w+x
+                endY = h+y
+                
+                cv2.line(img, (startX, startY), (startX+20, startY), (142,42,27), thickness=2)
+                cv2.line(img, (startX, startY), (startX, startY+20), (142,42,27), thickness=2)
+                # ending right
+                cv2.line(img, (endX, endY), (endX, endY-20), (142,42,27), thickness=2)
+                cv2.line(img, (endX, endY), (endX-20, endY), (142,42,27), thickness=2)
 
-                cv2.rectangle(img, (x,y), (x+w,y+h), (0,255,0), 2)
-
+                # ending left
+                cv2.line(img,(startX+20, endY),(startX, endY), (142,42,27), thickness=2)
+                cv2.line(img,(startX, endY-20),(startX, endY), (142,42,27), thickness=2)
+                
+                # starting left
+                cv2.line(img,(endX, startY+20),(endX, startY), (142,42,27), thickness=2)
+                cv2.line(img,(endX-20, startY),(endX, startY), (142,42,27), thickness=2)
+                
                 face_id, confidence = recognizer.predict(gray[y:y+h,x:x+w])
 
                 # Check if confidence is less then 100 ==> "0" is perfect match 
@@ -133,10 +167,10 @@ class FaceRecognition:
                 else:
                     name = "Unknown"
                 
-                cv2.putText(img, str(name), (x+5,y-5), font, 1, (255,255,255), 2)
-                cv2.putText(img, str(confidence), (x+5,y+h-5), font, 1, (255,255,0), 1)  
+                cv2.putText(img, str(name), (10,5), font, 1, (255,255,255), 2)
+                # cv2.putText(img, str(confidence), (x+5,y+h-5), font, 1, (255,255,0), 1)  
             
-            cv2.imshow('Detect Face',img) 
+            # cv2.imshow('Detect Face',img) 
 
             k = cv2.waitKey(10) & 0xff # Press 'ESC' for exiting video
             if k == 27:

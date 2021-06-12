@@ -7,8 +7,8 @@ class UserProfileAdmin(admin.ModelAdmin):
         'face_id',
         'name',
         'phone',
-      
         'email',
         'balance',
+        'customerLocation'
     )
-admin.site.register(UserProfile)
+admin.site.register(UserProfile, UserProfileAdmin)

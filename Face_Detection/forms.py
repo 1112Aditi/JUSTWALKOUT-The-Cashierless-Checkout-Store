@@ -11,3 +11,4 @@ class ResgistrationForm(forms.ModelForm):
             'phone',
             'image',
         ]
+    
